@@ -1,1 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tabuada</title>
+</head>
+<body>
+    <h1>Gerador de Tabuada</h1>
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="gerarTabuada()">Gerar Tabuada</button>
+    <div id="tabuada"></div>
 
+    <script>
+        function gerarTabuada() {
+            const numero = parseInt(document.getElementById('numero').value);
+            const tabuadaDiv = document.getElementById('tabuada');
+            tabuadaDiv.innerHTML = '<h2>Tabuada do ' + numero + '</h2>';
+            
+            for (let i = 1; i <= 10; i++) {
+                tabuadaDiv.innerHTML += `<p>${numero} x ${i} = ${numero * i}</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
