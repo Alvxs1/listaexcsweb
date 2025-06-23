@@ -1,1 +1,28 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contador</title>
+</head>
+<body>
+    <h1>Contador</h1>
+    <p id="valor">0</p>
+    <button onclick="aumentar()">Aumentar</button>
+    <button onclick="diminuir()">Diminuir</button>
+
+    <script>
+        let contador = 0;
+        const valorElement = document.getElementById('valor');
+        
+        function aumentar() {
+            contador++;
+            valorElement.textContent = contador;
+        }
+        
+        function diminuir() {
+            contador--;
+            valorElement.textContent = contador;
+        }
+    </script>
+</body>
+</html>
