@@ -1,1 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>Quiz de Matemática</h1>
+    <form id="quizForm">
+        <p>Qual é o resultado de 7 × 8?</p>
+        <label>
+            <input type="radio" name="resposta" value="48"> 48
+        </label><br>
+        <label>
+            <input type="radio" name="resposta" value="56"> 56
+        </label><br>
+        <label>
+            <input type="radio" name="resposta" value="64"> 64
+        </label><br>
+        <label>
+            <input type="radio" name="resposta" value="72"> 72
+        </label><br>
+        <button type="button" onclick="verificarResposta()">Verificar</button>
+    </form>
+    <p id="resultado"></p>
 
+    <script>
+        function verificarResposta() {
+            const respostaSelecionada = document.querySelector('input[name="resposta"]:checked');
+            const resultado = document.getElementById('resultado');
+            
+            if (!respostaSelecionada) {
+                resultado.textContent = "Por favor, selecione uma resposta.";
+                resultado.style.color = "red";
+                return;
+            }
+            
+            if (respostaSelecionada.value === "56") {
+                resultado.textContent = "Correto! 7 × 8 = 56";
+                resultado.style.color = "green";
+            } else {
+                resultado.textContent = "Incorreto! A resposta correta é 56.";
+                resultado.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
