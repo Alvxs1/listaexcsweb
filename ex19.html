@@ -1,1 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contador de Cliques</title>
+</head>
+<body>
+    <h1>Contador de Cliques</h1>
+    <button id="btnContador">Clique Aqui</button>
+    <p>Número de cliques: <span id="contador">0</span></p>
 
+    <script>
+        const btnContador = document.getElementById('btnContador');
+        const contadorSpan = document.getElementById('contador');
+        let cliques = 0;
+        
+        btnContador.addEventListener('click', function() {
+            cliques++;
+            contadorSpan.textContent = cliques;
+        });
+    </script>
+</body>
+</html>
