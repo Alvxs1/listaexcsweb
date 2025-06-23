@@ -1,1 +1,21 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Última Tecla Pressionada</title>
+</head>
+<body>
+    <h1>Digite algo no campo abaixo</h1>
+    <input type="text" id="inputTecla">
+    <p>Última tecla pressionada: <span id="teclaPressionada">Nenhuma</span></p>
+
+    <script>
+        const inputTecla = document.getElementById('inputTecla');
+        const teclaSpan = document.getElementById('teclaPressionada');
+        
+        inputTecla.addEventListener('keydown', function(e) {
+            teclaSpan.textContent = e.key;
+        });
+    </script>
+</body>
+</html>
