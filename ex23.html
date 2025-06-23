@@ -1,1 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Botão Condicional</title>
+</head>
+<body>
+    <h1>Habilite o botão marcando a checkbox</h1>
+    <label>
+        <input type="checkbox" id="checkPermissao"> Eu concordo com os termos
+    </label><br><br>
+    <button id="btnEnviar" disabled>Enviar</button>
 
+    <script>
+        const checkPermissao = document.getElementById('checkPermissao');
+        const btnEnviar = document.getElementById('btnEnviar');
+        
+        checkPermissao.addEventListener('change', function() {
+            btnEnviar.disabled = !this.checked;
+        });
+    </script>
+</body>
+</html>
