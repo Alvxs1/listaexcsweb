@@ -1,1 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Parágrafo com Duplo Clique</title>
+    <style>
+        #paragrafo {
+            padding: 20px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dê um duplo clique no parágrafo abaixo</h1>
+    <p id="paragrafo">Este parágrafo desaparecerá com um duplo clique.</p>
 
+    <script>
+        const paragrafo = document.getElementById('paragrafo');
+        
+        paragrafo.addEventListener('dblclick', function() {
+            this.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
