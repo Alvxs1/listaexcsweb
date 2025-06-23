@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz de Matemática</title>
+</head>
+<body>
+    <h1>Quiz de Matemática</h1>
+    <form id="quizForm">
+        <div class="questao">
+            <p>1. Qual é o resultado de 15 + 27?</p>
+            <label><input type="radio" name="q1" value="a"> 32</label><br>
+            <label><input type="radio" name="q1" value="b"> 42</label><br>
+            <label><input type="radio" name="q1" value="c"> 52</label><br>
+            <label><input type="radio" name="q1" value="d"> 62</label>
+        </div>
+        
+        <div class="questao">
+            <p>2. Qual é o resultado de 8 × 9?</p>
+            <label><input type="radio" name="q2" value="a"> 72</label><br>
+            <label><input type="radio" name="q2" value="b"> 81</label><br>
+            <label><input type="radio" name="q2" value="c"> 63</label><br>
+            <label><input type="radio" name="q2" value="d"> 56</label>
+        </div>
+        
+        <div class="questao">
+            <p>3. Qual é o resultado de 144 ÷ 12?</p>
+            <label><input type="radio" name="q3" value="a"> 10</label><br>
+            <label><input type="radio" name="q3" value="b"> 11</label><br>
+            <label><input type="radio" name="q3" value="c"> 12</label><br>
+            <label><input type="radio" name="q3" value="d"> 13</label>
+        </div>
+        
+        <button type="button" onclick="verificarRespostas()">Verificar Respostas</button>
+    </form>
+    <p id="resultado"></p>
 
+    <script>
+        function verificarRespostas() {
+            const respostas = {
+                q1: 'b', // 15 + 27 = 42
+                q2: 'a', // 8 × 9 = 72
+                q3: 'c'  // 144 ÷ 12 = 12
+            };
+            
+            let acertos = 0;
+            
+            for (let i = 1; i <= 3; i++) {
+                const questao = 'q' + i;
+                const respostaSelecionada = document.querySelector(`input[name="${questao}"]:checked`);
+                
+                if (respostaSelecionada && respostaSelecionada.value === respostas[questao]) {
+                    acertos++;
+                }
+            }
+            
+            const resultado = document.getElementById('resultado');
+            resultado.textContent = `Você acertou ${acertos} de 3 questões.`;
+            
+            if (acertos === 3) {
+                resultado.style.color = "green";
+                resultado.textContent += " Excelente!";
+            } else if (acertos >= 1) {
+                resultado.style.color = "orange";
+                resultado.textContent += " Pode melhorar!";
+            } else {
+                resultado.style.color = "red";
+                resultado.textContent += " Tente novamente!";
+            }
+        }
+    </script>
+</body>
+</html>
