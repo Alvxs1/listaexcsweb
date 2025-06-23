@@ -1,1 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulário com Validação</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulário de Contato</h1>
+    <form id="formContato">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome">
+        <span id="nomeError" class="error"></span>
+        
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email">
+        <span id="emailError" class="error"></span>
+        
+        <label for="assunto">Assunto:</label>
+        <input type="text" id="assunto" name="assunto">
+        <span id="assuntoError" class="error"></span>
+        
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="mensagem" rows="5"></textarea>
+        <span id="mensagemError" class="error"></span>
+        
+        <button type="button" onclick="validarFormulario()">Enviar</button>
+    </form>
 
+    <script>
+        function validarFormulario() {
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const assunto = document.getElementById('assunto').value;
+            const mensagem = document.getElementById('mensagem').value;
+            
+            let valido = true;
+            
+            // Limpar erros anteriores
+            document.querySelectorAll('.error').forEach(el => el.textContent = '');
+            
+            if (!nome) {
+                document.getElementById('nomeError').textContent = 'Nome é obrigatório';
+                valido = false;
+            }
+            
+            if (!email) {
+                document.getElementById('emailError').textContent = 'E-mail é obrigatório';
+                valido = false;
+            } else if (!email.includes('@') || !email.includes('.')) {
+                document.getElementById('emailError').textContent = 'E-mail inválido';
+                valido = false;
+            }
+            
+            if (!assunto) {
+                document.getElementById('assuntoError').textContent = 'Assunto é obrigatório';
+                valido = false;
+            }
+            
+            if (!mensagem) {
+                document.getElementById('mensagemError').textContent = 'Mensagem é obrigatória';
+                valido = false;
+            }
+            
+            if (valido) {
+                alert('Formulário enviado com sucesso!');
+                document.getElementById('formContato').reset();
+            }
+        }
+    </script>
+</body>
+</html>
