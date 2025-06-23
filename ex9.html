@@ -1,1 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mudar Cor de Fundo</title>
+    <style>
+        body {
+            transition: background-color 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mudar Cor de Fundo</h1>
+    <button onclick="mudarCorFundo()">Mudar Cor</button>
 
+    <script>
+        function mudarCorFundo() {
+            const cores = ['#FF5733', '#33FF57', '#3357FF', '#F033FF', '#FF33F0', '#33FFF5'];
+            const corAleatoria = cores[Math.floor(Math.random() * cores.length)];
+            document.body.style.backgroundColor = corAleatoria;
+        }
+    </script>
+</body>
+</html>
