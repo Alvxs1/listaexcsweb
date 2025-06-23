@@ -1,1 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Botão Colorido</title>
+</head>
+<body>
+    <h1>Clique no botão para mudar sua cor</h1>
+    <button id="btnCor">Mudar Cor</button>
 
+    <script>
+        const btnCor = document.getElementById('btnCor');
+        
+        btnCor.addEventListener('click', function() {
+            const cores = ['#FF5733', '#33FF57', '#3357FF', '#F033FF', '#FF33F0', '#33FFF5', '#FFC300', '#900C3F'];
+            const corAleatoria = cores[Math.floor(Math.random() * cores.length)];
+            this.style.backgroundColor = corAleatoria;
+        });
+    </script>
+</body>
+</html>
