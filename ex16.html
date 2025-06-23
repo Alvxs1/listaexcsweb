@@ -1,1 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudar Cor de Fundo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            transition: background-color 0.5s; /* Suave transição de cor */
+            padding: 20px;
+            text-align: center;
+        }
+        .opcoes {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        label {
+            display: block;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Escolha a cor de fundo:</h1>
+    <div class="opcoes">
+        <label>
+            <input type="radio" name="cor" value="#FF5733" checked> Vermelho  
+        </label>
+        <label>
+            <input type="radio" name="cor" value="#3498DB"> Azul  
+        </label>
+        <label>
+            <input type="radio" name="cor" value="#F1C40F"> Amarelo  
+        </label>
+        <label>
+            <input type="radio" name="cor" value="#FFFFFF"> Branco  
+        </label>
+    </div>
 
+    <script>
+        const radios = document.querySelectorAll('input[type="radio"]');
+        
+        radios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    document.body.style.backgroundColor = e.target.value;
+                }
+            });
+        });
+
+        // Inicia com branco (como no exemplo da imagem)
+        document.body.style.backgroundColor = "#FFFFFF";
+    </script>
+</body>
+</html>
