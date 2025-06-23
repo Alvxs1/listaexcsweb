@@ -1,1 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Texto Hover</title>
+    <style>
+        #textoHover {
+            padding: 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Passe o mouse sobre o texto abaixo</h1>
+    <p id="textoHover">Texto original - passe o mouse aqui</p>
 
+    <script>
+        const textoHover = document.getElementById('textoHover');
+        const textoOriginal = textoHover.textContent;
+        
+        textoHover.addEventListener('mouseover', function() {
+            this.textContent = "Texto alterado!";
+        });
+        
+        textoHover.addEventListener('mouseout', function() {
+            this.textContent = textoOriginal;
+        });
+    </script>
+</body>
+</html>
